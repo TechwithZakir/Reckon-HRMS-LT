@@ -1,0 +1,405 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "autoname": "format:SAL-{salary_month:%Y%m}-{#####}",
+ "creation": "2026-09-16 12:20:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "department",
+  "column_break_emp",
+  "designation",
+  "company",
+  "salary_month",
+  "salary_month_label",
+  "status_section",
+  "status",
+  "column_break_status",
+  "gross_section",
+  "gross_salary",
+  "attendance_section",
+  "present_days",
+  "absent_days",
+  "half_day_count",
+  "column_break_att",
+  "late_count",
+  "leave_days",
+  "attendance_deduction",
+  "allowance_section",
+  "allowances",
+  "bonus_section",
+  "bonuses",
+  "deduction_section",
+  "deductions",
+  "totals_section",
+  "total_allowance",
+  "total_bonus",
+  "column_break_totals",
+  "total_other_deduction",
+  "net_salary",
+  "payment_section",
+  "mode_of_payment",
+  "payment_date",
+  "column_break_pay",
+  "reference_no",
+  "accounting_section",
+  "journal_entry",
+  "column_break_acc",
+  "bank_entry",
+  "amended_reason"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Department",
+   "options": "Department",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_emp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "label": "Designation",
+   "options": "Designation",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.company",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "description": "Any date of the month; it is normalized to the first day of the month",
+   "fieldname": "salary_month",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Salary Month",
+   "reqd": 1
+  },
+  {
+   "fieldname": "salary_month_label",
+   "fieldtype": "Data",
+   "label": "Month",
+   "read_only": 1
+  },
+  {
+   "fieldname": "status_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Draft\nSubmitted\nPaid\nCancelled",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_status",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gross_section",
+   "fieldtype": "Section Break",
+   "label": "Gross Salary"
+  },
+  {
+   "default": "0",
+   "description": "Gross salary for this month. Defaults from the Employee record but can be changed here",
+   "fieldname": "gross_salary",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Gross Salary",
+   "non_negative": 1,
+   "options": "company",
+   "reqd": 1
+  },
+  {
+   "description": "Read from Frappe HR Attendance records for the selected month",
+   "fieldname": "attendance_section",
+   "fieldtype": "Section Break",
+   "label": "Attendance"
+  },
+  {
+   "default": "0",
+   "fieldname": "present_days",
+   "fieldtype": "Float",
+   "label": "Present Days",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "absent_days",
+   "fieldtype": "Float",
+   "label": "Absent Days",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "half_day_count",
+   "fieldtype": "Float",
+   "label": "Half Days",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_att",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "late_count",
+   "fieldtype": "Int",
+   "label": "Late Count",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "leave_days",
+   "fieldtype": "Float",
+   "label": "Leave Days",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "attendance_deduction",
+   "fieldtype": "Currency",
+   "label": "Attendance Deduction",
+   "non_negative": 1,
+   "options": "company",
+   "read_only": 1
+  },
+  {
+   "description": "Optional. Add allowance rows (e.g. Transport, Food) directly",
+   "fieldname": "allowance_section",
+   "fieldtype": "Section Break",
+   "label": "Allowances"
+  },
+  {
+   "fieldname": "allowances",
+   "fieldtype": "Table",
+   "label": "Allowances",
+   "options": "Salary Allowance"
+  },
+  {
+   "description": "Optional. Add bonus rows (e.g. Festival Bonus) directly",
+   "fieldname": "bonus_section",
+   "fieldtype": "Section Break",
+   "label": "Bonuses"
+  },
+  {
+   "fieldname": "bonuses",
+   "fieldtype": "Table",
+   "label": "Bonuses",
+   "options": "Salary Bonus"
+  },
+  {
+   "description": "Optional. Add deduction rows (e.g. Advance) directly",
+   "fieldname": "deduction_section",
+   "fieldtype": "Section Break",
+   "label": "Other Deductions"
+  },
+  {
+   "fieldname": "deductions",
+   "fieldtype": "Table",
+   "label": "Other Deductions",
+   "options": "Salary Deduction"
+  },
+  {
+   "fieldname": "totals_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_allowance",
+   "fieldtype": "Currency",
+   "label": "Total Allowance",
+   "options": "company",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_bonus",
+   "fieldtype": "Currency",
+   "label": "Total Bonus",
+   "options": "company",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_totals",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_other_deduction",
+   "fieldtype": "Currency",
+   "label": "Total Other Deduction",
+   "options": "company",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "net_salary",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Net Salary",
+   "options": "company",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "payment_section",
+   "fieldtype": "Section Break",
+   "label": "Payment"
+  },
+  {
+   "default": "Bank",
+   "fieldname": "mode_of_payment",
+   "fieldtype": "Select",
+   "label": "Payment Method",
+   "options": "Bank\nCash",
+   "read_only_depends_on": "eval:doc.status==='Paid' || doc.status==='Cancelled'"
+  },
+  {
+   "fieldname": "payment_date",
+   "fieldtype": "Date",
+   "label": "Payment Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_pay",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reference_no",
+   "fieldtype": "Data",
+   "label": "Reference No",
+   "read_only_depends_on": "eval:doc.status==='Paid' || doc.status==='Cancelled'"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "accounting_section",
+   "fieldtype": "Section Break",
+   "label": "ERPNext Accounting"
+  },
+  {
+   "description": "Journal Entry: Salary Expense (Dr) / Salary Payable (Cr)",
+   "fieldname": "journal_entry",
+   "fieldtype": "Link",
+   "label": "Accrual Entry",
+   "no_copy": 1,
+   "options": "Journal Entry",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_acc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Journal Entry: Salary Payable (Dr) / Bank or Cash (Cr)",
+   "fieldname": "bank_entry",
+   "fieldtype": "Link",
+   "label": "Payment Entry",
+   "no_copy": 1,
+   "options": "Journal Entry",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_reason",
+   "fieldtype": "Small Text",
+   "label": "Cancellation Reason",
+   "read_only": 1
+  }
+ ],
+ "index_webpages_for_search": 1,
+ "links": [],
+ "modified": "2026-09-16 12:20:00.000000",
+ "modified_by": "Administrator",
+ "module": "Reckon HRMS",
+ "name": "Salary Payment",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "employee_name,department,status",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "employee_name",
+ "track_changes": 1
+}

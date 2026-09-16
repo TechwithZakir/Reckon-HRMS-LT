@@ -1,0 +1,5 @@
+include *.md
+include *.txt
+recursive-include reckon_hrms_lt *.py
+recursive-include reckon_hrms_lt *.json
+recursive-include reckon_hrms_lt *.html

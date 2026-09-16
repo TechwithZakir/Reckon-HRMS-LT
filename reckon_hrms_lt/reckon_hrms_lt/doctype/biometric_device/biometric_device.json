@@ -1,0 +1,214 @@
+{
+ "actions": [],
+ "autoname": "field:device_name",
+ "creation": "2026-09-16 12:13:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "device_name",
+  "device_type",
+  "ip_address",
+  "port",
+  "column_break_conn",
+  "username",
+  "password",
+  "enabled",
+  "sync_settings_section",
+  "sync_interval_minutes",
+  "employee_id_field",
+  "column_break_sync",
+  "last_sync_time",
+  "last_sync_status",
+  "sync_stats_section",
+  "records_processed",
+  "successful_records",
+  "column_break_stats",
+  "failed_records",
+  "error_message",
+  "sync_log_section",
+  "sync_logs"
+ ],
+ "fields": [
+  {
+   "fieldname": "device_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Device Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "ZKTeco",
+   "fieldname": "device_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Device Type",
+   "options": "ZKTeco\nGeneric",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ip_address",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "IP Address / Hostname",
+   "reqd": 1
+  },
+  {
+   "default": "4370",
+   "fieldname": "port",
+   "fieldtype": "Int",
+   "label": "Port",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_conn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "username",
+   "fieldtype": "Data",
+   "label": "Username"
+  },
+  {
+   "fieldname": "password",
+   "fieldtype": "Password",
+   "label": "Password"
+  },
+  {
+   "default": "1",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Enabled"
+  },
+  {
+   "fieldname": "sync_settings_section",
+   "fieldtype": "Section Break",
+   "label": "Sync Settings"
+  },
+  {
+   "default": "30",
+   "description": "How often the device is synced automatically (in minutes)",
+   "fieldname": "sync_interval_minutes",
+   "fieldtype": "Int",
+   "label": "Sync Interval (Minutes)",
+   "reqd": 1
+  },
+  {
+   "default": "Employee Number",
+   "description": "Which Employee field the device user ID matches",
+   "fieldname": "employee_id_field",
+   "fieldtype": "Select",
+   "label": "Employee ID Field",
+   "options": "Employee Number\nUser ID\nAttendance Device ID\nEmployee Name (name)"
+  },
+  {
+   "fieldname": "column_break_sync",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "last_sync_time",
+   "fieldtype": "Datetime",
+   "label": "Last Sync Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_sync_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Last Sync Status",
+   "options": "\nSuccess\nPartial\nFailed",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sync_stats_section",
+   "fieldtype": "Section Break",
+   "label": "Last Sync Statistics"
+  },
+  {
+   "default": "0",
+   "fieldname": "records_processed",
+   "fieldtype": "Int",
+   "label": "Records Processed",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "successful_records",
+   "fieldtype": "Int",
+   "label": "Successful Records",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_stats",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "failed_records",
+   "fieldtype": "Int",
+   "label": "Failed Records",
+   "read_only": 1
+  },
+  {
+   "fieldname": "error_message",
+   "fieldtype": "Small Text",
+   "label": "Error Message",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sync_log_section",
+   "fieldtype": "Section Break",
+   "label": "Sync Logs"
+  },
+  {
+   "fieldname": "sync_logs",
+   "fieldtype": "HTML",
+   "label": "Sync Logs"
+  }
+ ],
+ "index_webpages_for_search": 1,
+ "links": [
+  {
+   "link_doctype": "Biometric Sync Log",
+   "link_fieldname": "device"
+  }
+ ],
+ "modified": "2026-09-16 12:13:00.000000",
+ "modified_by": "Administrator",
+ "module": "Reckon HRMS",
+ "name": "Biometric Device",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "device_name",
+ "track_changes": 1
+}

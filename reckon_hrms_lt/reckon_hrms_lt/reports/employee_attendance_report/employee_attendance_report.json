@@ -1,0 +1,28 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2026-09-16 13:13:00.000000",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "is_standard": "Yes",
+ "modified": "2026-09-16 13:13:00.000000",
+ "modified_by": "Administrator",
+ "module": "Reckon HRMS",
+ "name": "Employee Attendance Report",
+ "owner": "Administrator",
+ "query": "",
+ "ref_doctype": "Attendance",
+ "report_name": "Employee Attendance Report",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "HR Manager"
+  },
+  {
+   "role": "HR User"
+  }
+ ]
+}

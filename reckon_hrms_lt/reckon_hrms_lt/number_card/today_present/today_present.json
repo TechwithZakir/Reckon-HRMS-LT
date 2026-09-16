@@ -1,0 +1,17 @@
+{
+ "creation": "2026-09-16 12:52:00.000000",
+ "doctype": "Number Card",
+ "document_type": "Attendance",
+ "filters_json": "[[\"Attendance\",\"attendance_date\",\"=\",\"Today\",false],[\"Attendance\",\"status\",\"=\",\"Present\",false]]",
+ "function": "Count",
+ "is_public": 1,
+ "is_standard": 1,
+ "label": "Today Present",
+ "modified": "2026-09-16 12:52:00.000000",
+ "modified_by": "Administrator",
+ "module": "Reckon HRMS",
+ "name": "Today Present",
+ "owner": "Administrator",
+ "show_percentage_stats": 0,
+ "type": "Document Type"
+}

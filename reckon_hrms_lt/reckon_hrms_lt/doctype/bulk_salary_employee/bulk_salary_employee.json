@@ -1,0 +1,133 @@
+{
+ "actions": [],
+ "autoname": "hash",
+ "creation": "2026-09-16 12:36:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "department",
+  "gross_salary",
+  "allowance_total",
+  "bonus_total",
+  "attendance_deduction",
+  "other_deduction_total",
+  "net_salary",
+  "salary_payment",
+  "payment_status"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "default": "0",
+   "fieldname": "gross_salary",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Gross",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "description": "Total optional allowances for this month",
+   "fieldname": "allowance_total",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Allowance",
+   "non_negative": 1
+  },
+  {
+   "default": "0",
+   "description": "Total optional bonuses for this month",
+   "fieldname": "bonus_total",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Bonus",
+   "non_negative": 1
+  },
+  {
+   "default": "0",
+   "description": "Calculated from attendance rules in settings",
+   "fieldname": "attendance_deduction",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Att. Deduction",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "description": "Other deductions (e.g. advance)",
+   "fieldname": "other_deduction_total",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Other Deduction",
+   "non_negative": 1
+  },
+  {
+   "columns": 2,
+   "default": "0",
+   "fieldname": "net_salary",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Net",
+   "read_only": 1
+  },
+  {
+   "fieldname": "salary_payment",
+   "fieldtype": "Link",
+   "label": "Salary Payment",
+   "no_copy": 1,
+   "options": "Salary Payment",
+   "read_only": 1
+  },
+  {
+   "default": "",
+   "fieldname": "payment_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "\nDraft\nSubmitted\nPaid\nFailed",
+   "read_only": 1
+  }
+ ],
+ "index_webpages_for_search": 0,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-09-16 12:36:00.000000",
+ "modified_by": "Administrator",
+ "module": "Reckon HRMS",
+ "name": "Bulk Salary Employee",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
