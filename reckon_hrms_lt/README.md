@@ -77,11 +77,8 @@ Employee → Attendance / Biometric → Salary → Enter Gross → Add Allowance
 ### Install the app
 
 ```bash
-# SSH into your server
-ssh MLAdmin@20.193.248.133
 
 # Navigate to your bench directory
-cd /path/to/your/bench
 
 # Get the app (replace with actual repo URL)
 bench get-app reckon_hrms_lt <repo-url>
