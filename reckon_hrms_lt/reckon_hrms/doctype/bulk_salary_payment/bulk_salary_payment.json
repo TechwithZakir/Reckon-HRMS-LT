@@ -17,16 +17,15 @@
   "bulk_salary_employees"
  ],
  "fields": [
-  {
-   "default": "today",
-   "description": "Salary month for all employees. Must be a date in the month.",
-   "fieldname": "salary_month",
-   "fieldtype": "Date",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Salary Month",
-   "reqd": 1
-  },
+   {
+    "description": "Salary month for all employees. Must be a date in the month.",
+    "fieldname": "salary_month",
+    "fieldtype": "Date",
+    "in_list_view": 1,
+    "in_standard_filter": 1,
+    "label": "Salary Month",
+    "reqd": 1
+   },
   {
    "fieldname": "company",
    "fieldtype": "Link",
