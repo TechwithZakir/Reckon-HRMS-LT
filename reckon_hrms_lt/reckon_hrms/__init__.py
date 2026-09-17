@@ -2,6 +2,3 @@
 # Website: www.reckon.tech
 # Email: hello@reckon.tech
 # For license information, please see license.txt
-
-# Frappe and ERPNext dependencies are managed by the bench.
-# Add any additional Python packages required by this app below.

@@ -3,11 +3,6 @@
 # Email: hello@reckon.tech
 # For license information, please see license.txt
 
-# Copyright (c) 2026, Reckon Technologies Ltd.
-# Website: www.reckon.tech
-# Email: hello@reckon.tech
-# For license information, please see license.txt
-
 """Shared server-side utilities for Reckon HRMS.
 
 All salary maths live here so they are always performed on the server and can be
@@ -93,7 +88,7 @@ def get_attendance_summary(employee, month_start):
 	"""Aggregate standard Frappe HR Attendance records for one employee/month.
 
 	Returns dict with keys: present, absent, half_day, late, on_leave,
-	work_from_home, total_working_hours.
+	work_from_home.
 	"""
 	month_start = getdate(get_first_day(month_start))
 	month_end = getdate(get_last_day(month_start))

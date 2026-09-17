@@ -1,0 +1,194 @@
+{
+ "actions": [],
+ "creation": "2026-09-16 12:12:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "attendance_settings_section",
+  "working_days",
+  "office_start_time",
+  "late_threshold_minutes",
+  "late_count_for_deduction",
+  "column_break_att",
+  "absent_deduction_per_day",
+  "half_day_deduction",
+  "half_day_working_hours",
+  "mark_absent_auto",
+  "accounting_settings_section",
+  "company",
+  "salary_expense_account",
+  "salary_payable_account",
+  "column_break_acc",
+  "default_bank_account",
+  "default_cash_account",
+  "cost_center",
+  "accounting_help_section",
+  "accounting_help"
+ ],
+ "fields": [
+  {
+   "fieldname": "attendance_settings_section",
+   "fieldtype": "Section Break",
+   "label": "Attendance Settings"
+  },
+  {
+   "default": "30",
+   "description": "Number of working days in a month used for salary calculation",
+   "fieldname": "working_days",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Working Days",
+   "reqd": 1
+  },
+  {
+   "default": "09:00:00",
+   "description": "Official check-in time. Check-ins after this time plus late threshold are marked Late",
+   "fieldname": "office_start_time",
+   "fieldtype": "Time",
+   "label": "Office Start Time"
+  },
+  {
+   "default": "15",
+   "description": "Minutes after office start time within which a check-in is still considered on time",
+   "fieldname": "late_threshold_minutes",
+   "fieldtype": "Int",
+   "label": "Late Threshold (Minutes)",
+   "reqd": 1
+  },
+  {
+   "default": "3",
+   "description": "Number of late entries equal to one day deduction (e.g. 3 Late = 1 Day)",
+   "fieldname": "late_count_for_deduction",
+   "fieldtype": "Int",
+   "label": "Late Count for 1 Day Deduction",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_att",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "description": "Days deducted from salary per absent day (1 = full day salary)",
+   "fieldname": "absent_deduction_per_day",
+   "fieldtype": "Float",
+   "label": "Absent = Day Deduction",
+   "reqd": 1
+  },
+  {
+   "default": "0.5",
+   "description": "Days deducted from salary per half day (0.5 = half day salary)",
+   "fieldname": "half_day_deduction",
+   "fieldtype": "Float",
+   "label": "Half Day = Day Deduction",
+   "reqd": 1
+  },
+  {
+   "default": "4",
+   "description": "If total working hours are at least this value but a full day was not worked, attendance is marked Half Day",
+   "fieldname": "half_day_working_hours",
+   "fieldtype": "Float",
+   "label": "Half Day Working Hours",
+   "non_negative": 1
+  },
+  {
+   "default": "0",
+   "description": "Automatically mark employees Absent when they have no check-ins and no leave for a working day",
+   "fieldname": "mark_absent_auto",
+   "fieldtype": "Check",
+   "label": "Auto Mark Absent"
+  },
+  {
+   "fieldname": "accounting_settings_section",
+   "fieldtype": "Section Break",
+   "label": "Accounting Settings"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "description": "Expense account used when salary is paid (e.g. Salary Expense / Payroll Expenses)",
+   "fieldname": "salary_expense_account",
+   "fieldtype": "Link",
+   "label": "Salary Expense Account",
+   "options": "Account"
+  },
+  {
+   "description": "Liability account salaries pass through (e.g. Salary Payable / Payroll Payable)",
+   "fieldname": "salary_payable_account",
+   "fieldtype": "Link",
+   "label": "Salary Payable Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "column_break_acc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Default account used when payment method is Bank",
+   "fieldname": "default_bank_account",
+   "fieldtype": "Link",
+   "label": "Default Bank Account",
+   "options": "Account"
+  },
+  {
+   "description": "Default account used when payment method is Cash",
+   "fieldname": "default_cash_account",
+   "fieldtype": "Link",
+   "label": "Default Cash Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "accounting_help_section",
+   "fieldtype": "Section Break",
+   "label": "Help"
+  },
+  {
+   "fieldname": "accounting_help",
+   "fieldtype": "HTML",
+   "label": "Accounting Help",
+   "options": "<p>Accounts must belong to the selected Company. Bank / Cash accounts should be of account type <b>Bank</b> or <b>Cash</b>. These settings are used behind the scenes when the HR user clicks <b>Pay Salary</b> - a Journal Entry (accrual) and a Payment Entry (payment) are created automatically in ERPNext.</p>"
+  }
+ ],
+ "index_webpages_for_search": 0,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-09-16 12:12:00.000000",
+ "modified_by": "Administrator",
+ "module": "Reckon HRMS",
+ "name": "Reckon HRMS Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

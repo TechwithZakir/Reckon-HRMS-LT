@@ -6,7 +6,7 @@
 from setuptools import setup, find_packages
 
 with open("requirements.txt") as f:
-	install_requires = f.read().strip().split("\n")
+	install_requires = [line.strip() for line in f if line.strip() and not line.startswith("#")]
 
 # get version from __init__.py
 from reckon_hrms_lt import __version__ as version

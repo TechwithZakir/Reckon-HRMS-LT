@@ -3,11 +3,6 @@
 # Email: hello@reckon.tech
 # For license information, please see license.txt
 
-# Copyright (c) 2026, Reckon Technologies Ltd.
-# Website: www.reckon.tech
-# Email: hello@reckon.tech
-# For license information, please see license.txt
-
 from . import __version__ as app_version
 
 app_name = "reckon_hrms_lt"
@@ -16,6 +11,12 @@ app_publisher = "Reckon Technologies Ltd."
 app_description = "Simple HRMS application for Frappe/ERPNext v16"
 app_email = "hello@reckon.tech"
 app_license = "MIT"
+
+# Apps this app depends on. Bench will validate these are installed.
+required_apps = ["erpnext", "hrms"]
+
+# Extra standard document types bundled in the app folder that must be synced.
+importable_doctypes = ["number_card"]
 
 # Includes in <head>
 # ------------------
@@ -133,9 +134,6 @@ doc_events = {
 # ---------------
 
 scheduler_events = {
-	"hourly": [
-		"reckon_hrms_lt.tasks.biometric_sync.sync_biometric_devices"
-	],
 	"daily": [
 		"reckon_hrms_lt.tasks.auto_attendance.process_auto_attendance"
 	]

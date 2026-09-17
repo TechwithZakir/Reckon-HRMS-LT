@@ -3,11 +3,6 @@
 # Email: hello@reckon.tech
 # For license information, please see license.txt
 
-# Copyright (c) 2026, Reckon Technologies Ltd.
-# Website: www.reckon.tech
-# Email: hello@reckon.tech
-# For license information, please see license.txt
-
 """Document event hooks. These extend (never modify) standard Frappe HR behaviour."""
 
 import frappe
@@ -18,7 +13,7 @@ from frappe.utils import get_datetime
 def validate_duplicate_checkin(doc, method=None):
 	"""Prevent duplicate Employee Checkin records (same employee, time and log type).
 
-	Covers manual entry and biometric sync. Frappe HR core is not modified -
+	Covers manual entry. Frappe HR core is not modified -
 	this runs through the standard doc_events hook.
 	"""
 	if doc.flags.ignore_duplicate_check:
