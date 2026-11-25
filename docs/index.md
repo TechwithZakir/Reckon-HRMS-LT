@@ -8,6 +8,8 @@ lang: en
 
 # Reckon HRMS Lite: simple HR, attendance and salary payment
 
+![Banner](banner.svg)
+
 Reckon HRMS Lite is a simple HR application from Reckon Technologies Ltd. for Frappe and ERPNext v16. The idea is that an everyday HR user should never need to understand salary structures, payroll entries or ledger postings. They manage people, attendance and pay in plain screens, and the accounting happens behind the scenes. It is part of the ReckonERP offering at [app.reckon.tech](https://app.reckon.tech).
 
 ## Detailed features
